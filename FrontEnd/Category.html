@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Category Management</h1>
+        
+        <!-- Category selection dropdown -->
+        <div class="form-group">
+            <label for="categorySelect">Select Category:</label>
+            <select class="form-control" id="categorySelect" onchange="selectCategory()">
+                <option value="">Select a category...</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <!-- Operations section -->
+        <div id="operationsSection" style="display: none;">
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" class="form-control" id="itemName" name="itemName" required>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2" onclick="addItem()">Add Item</button>
+                <button type="button" id="displayBtn" class="btn btn-info mr-2" onclick="displayItems()">Display Items</button>
+                <button type="button" id="updateBtn" class="btn btn-warning mr-2" onclick="updateItem()">Update Item</button>
+                <button type="button" id="deleteBtn" class="btn btn-danger" onclick="deleteItem()">Delete Item</button>
+            </form>
+            <ul id="itemList" class="list-group mt-4"></ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="Category.js"></script>
+</body>
+</html>
